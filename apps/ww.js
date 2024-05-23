@@ -73,8 +73,8 @@ export class WutheringWaves extends plugin {
       logger.error(roleData)
       return
     }
-    let icons = ['anke', 'bailian', 'danjing', 'jianxin', 'jiyan', 'kakaluo', 'lingyang', 'man', 'motefei', 'qiushui',
-      'sanhua', 'taoqi', 'weilinai', 'women', 'yuanwu', 'zhixia', 'yangyang'
+    let icons = ['anke', 'bailian', 'danjing', 'jianxin', 'jiyan', 'lingyang', 'man', 'motefei', 'qiushui',
+      'sanhua', 'taoqi', 'women', 'yuanwu', 'zhixia', 'yangyang'
     ]
     const filePath = common.absPath('./plugins/karin-plugin-ww/resources')
     const html = filePath + '/template/basic/index.html'
