@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ww-plugin</title>
+  <link rel="stylesheet" href="{{pluResPath}}/template/basic/basic.css">
+</head>
+
+<body>
+<div class="container">
+  <div class="title">
+    <img src="{{pluResPath}}/image/characters/icon/{{randomIconName}}.png">
+    <div class="name">
+      <div>
+        {{base.name}}
+      </div>
+      <div class="uid">
+        特征码: {{base.id}}
+      </div>
+    </div>
+    <div class="logo">
+      <img src="{{pluResPath}}/image/icon/logo-gold.png">
+    </div>
+  </div>
+  <div class="explore">
+    <div class="explore-block">
+      <h2>
+        {{base.activeDays}}
+      </h2>
+      <h1>
+        游戏天数
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.level}}
+      </h2>
+      <h1>
+        联觉等级
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.worldLevel}}
+      </h2>
+      <h1>
+        索拉等级
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.achievementCount}}
+      </h2>
+      <h1>
+        已达成成就
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.roleNum}}
+      </h2>
+      <h1>
+        解锁角色
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.soundBox}}
+      </h2>
+      <h1>
+        声匣收集数
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.smallCount}}
+      </h2>
+      <h1>
+        小型信标解锁数
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.bigCount}}
+      </h2>
+      <h1>
+        中型信标解锁数
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.boxList.find(i => i.boxName.includes('朴素')).num}}
+      </h2>
+      <h1>
+        朴素奇藏箱
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.boxList.find(i => i.boxName.includes('基准')).num}}
+      </h2>
+      <h1>
+        基准奇藏箱
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.boxList.find(i => i.boxName.includes('精密')).num}}
+      </h2>
+      <h1>
+        精密奇藏箱
+      </h1>
+    </div>
+    <div class="explore-block">
+      <h2>
+        {{base.boxList.find(i => i.boxName.includes('辉光')).num}}
+      </h2>
+      <h1>
+        辉光奇藏箱
+      </h1>
+    </div>
+
+  </div>
+  <div class="role">
+    <div class="role-title">
+      共鸣者
+    </div>
+    <div class="role-list">
+      {{each role.roleList role i}}
+      <div class="role-block">
+        <img src="{{role.roleIconUrl}}">
+        <div class="role-name">
+          <div>
+            {{if role.attributeName === '衍射'}}
+            <img src="{{pluResPath}}/image/icon/elements/T_IconElementLight3.png">
+            {{else if role.attributeName === '气动'}}
+            <img src="{{pluResPath}}/image/icon/elements/T_IconElementWind3.png">
+            {{else if role.attributeName === '热熔'}}
+            <img src="{{pluResPath}}/image/icon/elements/T_IconElementFire3.png">
+            {{else if role.attributeName === '冷凝'}}
+            <img src="{{pluResPath}}/image/icon/elements/T_IconElementIce3.png">
+            {{else if role.attributeName === '湮灭'}}
+            <img src="{{pluResPath}}/image/icon/elements/T_IconElementDark3.png">
+            {{else}}
+            <img src="{{pluResPath}}/image/icon/elements/T_IconElementThunder3.png">
+            {{/if}}
+          </div>
+          <div class="role-name-detail">
+            {{role.roleName}}
+            <div>
+              {{if role.starLevel == 5}}
+              <img src="{{pluResPath}}/image/icon/metrics/star5.png" style="width: 100px; margin-left: -20px; margin-top: -5px">
+              {{else}}
+              <img src="{{pluResPath}}/image/icon/metrics/star4.png" style="width: 100px; margin-left: -20px; margin-top: -5px">
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        {{if role.starLevel == 5}}
+        <div class="role-rarity-5"></div>
+        {{else}}
+        <div class="role-rarity-4"></div>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+
+  <div class="datawu">
+    <div class="datawu-title">
+      数据坞
+    </div>
+    <div class="datawu-detail">
+      <div class="hulu">
+        <div>{{calabash.level}}</div>
+      </div>
+      <div class="datawu-chart">
+        <div class="datawu-chart-line datawu-chart-line-light">
+          <div class="datawu-chart-line-key">
+            基础吸收概率
+          </div>
+          <div class="datawu-chart-line-value">
+            {{calabash.baseCatch}}
+          </div>
+        </div>
+        <div class="datawu-chart-line datawu-chart-line-dark">
+          <div class="datawu-chart-line-key">
+            强化吸收概率
+          </div>
+          <div class="datawu-chart-line-value">
+            {{calabash.strengthenCatch}}
+          </div>
+        </div>
+        <div class="datawu-chart-line datawu-chart-line-light">
+          <div class="datawu-chart-line-key">
+            最高可吸收品质
+          </div>
+          <div class="datawu-chart-line-value">
+            {{calabash.catchQuality}}
+          </div>
+        </div>
+        <div class="datawu-chart-line datawu-chart-line-dark">
+          <div class="datawu-chart-line-key">
+            COST上限
+          </div>
+          <div class="datawu-chart-line-value">
+            {{calabash.cost}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    Created by Karin & karin-plugin-ww
+  </div>
+</div>
+
+</body>
+
+</html>

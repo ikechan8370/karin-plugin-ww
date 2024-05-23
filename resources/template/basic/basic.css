@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'smiley';
+  src: url('../../fonts/SmileySans-Oblique.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ww';
+  src: url('../../fonts/ARFangXinShuH7GBK-HV.ttf') format('truetype');
+}
+
+body {
+  width: 800px;
+  font-family: 'ww', sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 1000px;
+  background-image: url("../../image/icon/metrics/bg-51ada1a7.jpg");
+}
+
+.title {
+  color: antiquewhite;
+  margin-left: 5%;
+  margin-inside: 5%;
+  padding-top: 30px;
+  display: flex;
+}
+
+.title img {
+  width: 80px;
+  border: antiquewhite solid 1px;
+  border-radius: 40px;
+}
+
+.name {
+  margin-left: 30px;
+  margin-top: 5px;
+  font-size: 28px;
+}
+
+.uid {
+  margin-top: 7px;
+  font-size: 24px;
+}
+
+.logo {
+  position: absolute;
+  left: 530px;
+}
+.logo img {
+  width: 160px;
+  border: none;
+  border-radius: unset;
+}
+
+.explore {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 5%;
+  padding-top: 40px;
+}
+
+.explore-block {
+  background: antiquewhite;
+  width: 150px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-right: 20px;
+}
+
+
+
+.explore-block h2 {
+  text-align: center;
+  font-size: 28px;
+  line-height: 10px;
+}
+.explore-block h1 {
+  text-align: center;
+  font-size: 18px;
+  color: #945917;
+  line-height: 10px;
+}
+.role {
+  margin-left: 5%;
+  padding-top: 70px;
+}
+
+.role-title {
+  font-size: 40px;
+  color: #cb914f;
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  background-image: url("../../image/icon/metrics/titleBg-e8800d90.png");
+  background-repeat: no-repeat;
+}
+
+.role-list {
+  /*margin-left: 5%;*/
+  /*width: 90%;*/
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.role-block {
+  width: 160px;
+  border: #945917 solid 1px;
+  background: black;
+  margin-right: 11px;
+  margin-bottom: 10px;
+}
+.role-block img {
+
+  width: 160px;
+  background: antiquewhite;
+  border-radius: 0 0 10px 10px;
+}
+
+.role-name {
+  display: flex;
+  height: 38px;
+}
+
+.role-name img {
+  margin-left: 6px;
+  border-radius: unset;
+  width: 30px;
+  background: none;
+  margin-top: 2px;
+}
+
+.role-name-detail {
+  margin-left: 5px;
+  color: antiquewhite;
+}
+
+.role-rarity-5 {
+  height: 5px;
+  width: 100%;
+  background: #e9b579;
+}
+
+.role-rarity-4 {
+  height: 8px;
+  width: 100%;
+  background: #9248ce;
+}
+
+.datawu{
+  margin-left: 5%;
+  padding-top: 20px;
+}
+
+.datawu-title {
+  font-size: 40px;
+  color: #cb914f;
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  background-image: url("../../image/icon/metrics/titleBg-e8800d90.png");
+  background-repeat: no-repeat;
+}
+
+.datawu-detail {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.hulu {
+  width: 200px;
+  height: 212px;
+  background-image: url("../../image/icon/metrics/level-bg-e8249d9b.jpeg");
+  background-repeat: no-repeat;
+  font-size: 48px;
+  color: #e9b579;
+}
+
+.hulu div {
+  margin-left: 85px;
+  margin-top: 90px;
+}
+
+.datawu-chart {
+
+}
+.datawu-chart-line {
+  width: 485px;
+  height: 53px;
+  font-size: 20px;
+  display: flex;
+}
+.datawu-chart-line-key {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 50%;
+}
+.datawu-chart-line-value {
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 50%;
+}
+.datawu-chart-line-dark {
+  background: #bc9f7a;
+}
+.datawu-chart-line-light {
+  background: #e5c9ab;
+}
+
+.footer {
+  margin-top: 5px;
+  font-size: 20px;
+  color: #e9b579;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+
