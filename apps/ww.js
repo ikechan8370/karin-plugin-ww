@@ -1,103 +1,103 @@
-import { common, plugin, Renderer, segment } from '#Karin'
+import { common, plugin, render, segment } from '#Karin'
 import { KuroUser } from '../model/user.js'
 import { KuroClient } from '../model/kuro.js'
 
 const characters =
-  {
-    1102: {
-      name: '散华',
-      alias: ['散花', 'Sanhua']
-    },
-    1103: {
-      name: '白芷',
-      alias: ['白纸', 'Baizhi']
-    },
-    1104: {
-      name: '凌阳',
-      alias: ['雪豹', 'Lingyang']
-    },
-    1202: {
-      name: '炽霞',
-      alias: ['赤霞', 'Chixia']
-    },
-    1203: {
-      name: '安可',
-      alias: ['安妮', 'Encore']
-    },
-    1204: {
-      name: '莫特斐',
-      alias: ['Mortefi']
-    },
-    1301: {
-      name: '卡卡罗',
-      alias: ['calcharo', 'kakarot', '可可萝']
-    },
-    1302: {
-      name: '吟霖',
-      alias: ['银临', '银铃', 'Yinlin']
-    },
-    1303: {
-      name: '渊武',
-      alias: ['元武', 'Yuanwu']
-    },
-    1304: {},
-    1402: {
-      name: '秧秧',
-      alias: ['泱泱']
-    },
-    1403: {
-      name: '秋水',
-      alias: []
-    },
-    1404: {
-      name: '忌炎',
-      alias: ['鸡眼', 'Jiyan']
-    },
-    1405: {
-      name: '鉴心',
-      alias: ['Jianxin', '小道', '剑心']
-    },
-    1501: {
-      name: '漂泊者-衍射',
-      alias: ['漂泊者']
-    },
-    1502: {
-      name: '漂泊者-衍射',
-      alias: ['漂泊者']
-    },
-    1503: {
-      name: '维里奈',
-      alias: ['维里', '维里奈', 'Verina']
-    },
-    1504: {
-      name: '漂泊者-导电',
-      alias: ['漂泊者']
-    },
-    1505: {
-      name: '漂泊者-导电',
-      alias: ['漂泊者']
-    },
-    1601: {
-      name: '桃祈',
-      alias: ['淘气', 'Taoqi']
-    },
-    1602: {
-      name: '丹瑾',
-      alias: ['丹静', 'Danjin']
-    },
-    1603: {
-      name: '椿',
-      alias: ['Chun', 'Camellya']
-    },
-    1604: {
-      name: '漂泊者-湮灭',
-      alias: ['漂泊者']
-    },
-    1605: {
-      name: '漂泊者-湮灭',
-      alias: ['漂泊者']
-    }
+{
+  1102: {
+    name: '散华',
+    alias: ['散花', 'Sanhua']
+  },
+  1103: {
+    name: '白芷',
+    alias: ['白纸', 'Baizhi']
+  },
+  1104: {
+    name: '凌阳',
+    alias: ['雪豹', 'Lingyang']
+  },
+  1202: {
+    name: '炽霞',
+    alias: ['赤霞', 'Chixia']
+  },
+  1203: {
+    name: '安可',
+    alias: ['安妮', 'Encore']
+  },
+  1204: {
+    name: '莫特斐',
+    alias: ['Mortefi']
+  },
+  1301: {
+    name: '卡卡罗',
+    alias: ['calcharo', 'kakarot', '可可萝']
+  },
+  1302: {
+    name: '吟霖',
+    alias: ['银临', '银铃', 'Yinlin']
+  },
+  1303: {
+    name: '渊武',
+    alias: ['元武', 'Yuanwu']
+  },
+  1304: {},
+  1402: {
+    name: '秧秧',
+    alias: ['泱泱']
+  },
+  1403: {
+    name: '秋水',
+    alias: []
+  },
+  1404: {
+    name: '忌炎',
+    alias: ['鸡眼', 'Jiyan']
+  },
+  1405: {
+    name: '鉴心',
+    alias: ['Jianxin', '小道', '剑心']
+  },
+  1501: {
+    name: '漂泊者-衍射',
+    alias: ['漂泊者']
+  },
+  1502: {
+    name: '漂泊者-衍射',
+    alias: ['漂泊者']
+  },
+  1503: {
+    name: '维里奈',
+    alias: ['维里', '维里奈', 'Verina']
+  },
+  1504: {
+    name: '漂泊者-导电',
+    alias: ['漂泊者']
+  },
+  1505: {
+    name: '漂泊者-导电',
+    alias: ['漂泊者']
+  },
+  1601: {
+    name: '桃祈',
+    alias: ['淘气', 'Taoqi']
+  },
+  1602: {
+    name: '丹瑾',
+    alias: ['丹静', 'Danjin']
+  },
+  1603: {
+    name: '椿',
+    alias: ['Chun', 'Camellya']
+  },
+  1604: {
+    name: '漂泊者-湮灭',
+    alias: ['漂泊者']
+  },
+  1605: {
+    name: '漂泊者-湮灭',
+    alias: ['漂泊者']
   }
+}
 const chatReg = Object.values(characters).flatMap(i => {
   let r = i.alias || []
   r.push(i.name)
@@ -190,10 +190,10 @@ export class WutheringWaves extends plugin {
       base: data,
       role: roleData,
       calabash: calabashData,
-      tplFile: html,
       pluResPath: process.cwd() + '/plugins/karin-plugin-ww/resources'
     }
-    const img = await Renderer.render({
+    const img = await render.render({
+      file: html,
       name: 'render',
       data: renderData
     })
@@ -292,11 +292,11 @@ export class WutheringWaves extends plugin {
     const html = filePath + '/template/role/index.html'
     let renderData = {
       data: roleDetail,
-      tplFile: html,
       pluResPath: process.cwd() + '/plugins/karin-plugin-ww/resources'
     }
-    const img = await Renderer.render({
+    const img = await render.render({
       name: 'render',
+      file: html,
       data: renderData
     })
     this.reply(segment.image(img), { reply: true })
